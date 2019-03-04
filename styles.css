@@ -1,0 +1,200 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    font-family: 'Merriweather';
+}
+
+
+header {
+    text-align: center;
+    background: #f9b302;
+    padding: 20px 10px;
+    width: 100%
+}
+
+h1 {
+    color: white;
+    font-size: 1.1em;
+    letter-spacing: .3px;
+}
+h2 {
+    color: #162f3f;
+    font-size: 1.2em;
+    padding-bottom: 10px;
+}
+
+p {
+    color: grey;
+    font-size: .8em;
+    padding-bottom: 2.5em;
+}
+
+
+.news {
+    text-align: center;
+    margin: 10px;
+    padding-top: 20px;
+}
+
+.border {
+    border-bottom: 2px solid #162f3f;
+    padding-bottom: 3px;
+}
+
+.border::after {
+    content: " ";
+    display: block;
+    border-bottom: 4px solid #162f3f;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.firstcontainer,
+.secondcontainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-bottom: 1.5em;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #162f3f;
+}
+
+footer {
+    text-align: center;
+    margin: 2em;
+    font-style: italic;
+    font-size: .8em;
+    color: darkgray;
+}
+
+input,
+textarea,
+select {
+    background: #e8eaea;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    height: auto;
+    padding: 15px;
+}
+
+
+label {
+    padding: 10px 0;
+    color: #162f3f;
+    font-size: .8em;
+}
+
+
+button {
+    background: #f9b302;
+    border: none;
+    border-radius: 5px;
+    padding: 1em;
+    color: white;
+    font-size: 1em;
+    margin: 0 10px;
+    font-family: 'Merriweather';
+    font-weight: bold;
+    width: 100%
+}
+
+input::placeholder,
+textarea::placeholder{
+    color: darkgrey;
+    font-style: italic;
+    font-size: 15px
+}
+
+input::placeholder {
+    text-align: right;
+}
+
+#zipcode {
+    width: 50%;
+    transition: width 1.5s;
+}
+
+#zipcode:focus {
+    width: 100%;
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 0;
+    border: 1px solid #52bab3;
+    
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+    transform: scale(1.3)
+
+}
+
+
+/* ================================= 
+Media Queries
+==================================== */
+
+@media(min-width: 768px) {
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    main {
+        width: 50%;
+        display: inline-block;
+    }
+    
+    .firstcontainer {
+        display: flex;
+        flex-direction: row;
+    }
+    .firstcontainer label {
+        flex-basis: 30%;
+        margin-bottom: 10px;
+    }
+    
+    .firstcontainer input:not(#zipcode),
+    .firstcontainer select {
+        flex-basis: 70%;
+        margin-bottom: 10px;
+    }
+    
+    #zipcode {
+        width: 30% 
+    }
+    
+    #zipcode:focus {
+        width: 70%;
+    }
+    
+}
